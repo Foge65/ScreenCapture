@@ -7,6 +7,8 @@ import java.awt.image.BufferedImage;
 public class ScreenCaptureApp {
     private final JLabel imageLabel;
     private Robot robot;
+    private final static int SIZE_X = 1317;
+    private final static int SIZE_Y = 962;
     private Point mouseDownCompCoordinate = null;
 
     public ScreenCaptureApp() {
@@ -23,7 +25,7 @@ public class ScreenCaptureApp {
 
         JFrame frame = new JFrame("Image Capture App");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1299, 954);
+        frame.setSize(SIZE_X, SIZE_Y);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
@@ -64,7 +66,7 @@ public class ScreenCaptureApp {
     }
 
     private void captureAndDisplayImage() {
-        Rectangle captureRect = new Rectangle(269, 0, 1299, 952);
+        Rectangle captureRect = new Rectangle(270, 0, SIZE_X, SIZE_Y);
         BufferedImage capture = robot.createScreenCapture(captureRect);
 
         Point mouseLocation = MouseInfo.getPointerInfo().getLocation();
